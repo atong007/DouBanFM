@@ -1,0 +1,27 @@
+//
+//  pchFile.pch
+//  0812-DouBanFM
+//
+//  Created by 洪龙通 on 16/8/17.
+//  Copyright © 2016年 洪龙通. All rights reserved.
+//
+
+#ifndef pchFile_pch
+#define pchFile_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef __OBJC__
+
+#import "DBCommon.h"
+
+// 自定义Log
+#ifdef DEBUG
+#define WBLog(...) NSLog(__VA_ARGS__)
+#else
+#define WBLog(...)
+#endif
+
+#endif
+
+#endif /* pchFile_pch */
