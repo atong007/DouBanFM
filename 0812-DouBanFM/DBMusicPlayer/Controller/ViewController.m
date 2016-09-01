@@ -437,6 +437,7 @@
 
 - (void)nextSong
 {
+    [DBAudioPlayer pause];
     self.songProgress.progress = 0.0;
     self.likeBtn.enabled       = NO;
     self.nextBtn.enabled       = NO;
@@ -473,6 +474,9 @@
  *  切换channel
  */
 - (void)channelUpdate {
+    
+    [DBAudioPlayer pause];
+    self.songProgress.progress = 0.0;
     __weak ViewController *selfVC = self;
     [DBNetwork loadFMListWithType:@"n" success:^{
         [selfVC loadNetworkData];
